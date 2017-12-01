@@ -1,4 +1,5 @@
 import org.codehaus.groovy.ant.Groovy
+import static java.lang.Math.*
 
 /**
  * Assigning a closure to a SAM type
@@ -62,7 +63,9 @@ def fooBar1 = {
 assert fooBar1.foo() == 123
 fooBar1.bar()
 
-
+/**
+ * map to type coersion
+ */
 map = [
         i:10,
         hasNext:{map.i>0},
@@ -86,3 +89,57 @@ x = [
 x.f()
 x.g(3)
 
+/**
+ * string to enum coersion
+ */
+enum State {
+  up,
+  down
+}
+State up='up'
+assert up == State.up
+def val  = 'up'
+assert "$val" as State == State.up
+
+State switchState(State state) {
+  switch (state) {
+    case 'up':
+      return State.down
+    case 'down':
+      return State.up
+  }
+}
+assert switchState('up' as State) == State.down
+assert switchState(State.down) == State.up
+
+/**
+ * custom type coersion
+ */
+class Polar {
+  double r
+  double phi
+  def asType(Class target) {
+    if (Cartesian == target) {
+      return new Cartesian(x:r*cos(phi),y:r*sin(phi))
+    }
+  }
+}
+class Cartesian {
+  double x
+  double y
+}
+def sigma = 1E-16
+def polar = new Polar(r:1.0,phi:PI/2)
+def cartesian = polar as Cartesian
+assert abs(cartesian.x-sigma) < sigma
+
+/**
+ * class literals vs variables and the as operator
+ */
+interface Greeter2 {
+  void greet()
+}
+Greeter2 greeter2 = {println 'Hello,Groovy!'}
+greeter2.greet()
+greeter2 = {println 'Hello,Groovy!'}.asType(Class.forName('Greeter2'))
+greeter2.greet()
