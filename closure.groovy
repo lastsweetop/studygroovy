@@ -311,7 +311,7 @@ assert cl16() == 42
  def sam = new Person21(name:'Sam')
  def lucy = new Person21(name:'Lucy')
 
- def p = sam
+ p = sam
  def gs2 = "Name : ${p}"
  assert gs2 == 'Name : Sam'
  p == lucy

@@ -1,3 +1,5 @@
+package promotionAndcoersion
+
 import org.codehaus.groovy.ant.Groovy
 import static java.lang.Math.*
 
@@ -66,6 +68,7 @@ fooBar1.bar()
 /**
  * map to type coersion
  */
+def map
 map = [
         i:10,
         hasNext:{map.i>0},
@@ -141,5 +144,5 @@ interface Greeter2 {
 }
 Greeter2 greeter2 = {println 'Hello,Groovy!'}
 greeter2.greet()
-greeter2 = {println 'Hello,Groovy!'}.asType(Class.forName('Greeter2'))
-greeter2.greet()
+
+

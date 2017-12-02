@@ -1,3 +1,4 @@
+package properties
 class Person {
     String name
     int age

@@ -1,5 +1,5 @@
 #!/usr/bin/env groovy
-
+package object_op
 def user
 def displayName = user?.name ?: 'Anonymous'
 println displayName

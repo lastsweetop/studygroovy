@@ -1,4 +1,5 @@
 #!/usr/bin/env groovy
+package subscript_op
 
 def list=[0,1,2,3,4]
 assert list[2]==2

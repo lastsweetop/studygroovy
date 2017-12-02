@@ -1,10 +1,12 @@
+package fileds
+
 class Data {
     private int id
     protected String description
     public static final boolean DEBUG = false
 }
 
-class Data {
+class Data2 {
     private String id = IDGenerator.next()
     // ...
 }

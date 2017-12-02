@@ -1,3 +1,14 @@
+package annotations
+
+import org.codehaus.groovy.ast.AnnotatedNode
+import org.codehaus.groovy.ast.AnnotationNode
+import org.codehaus.groovy.ast.ClassHelper
+import org.codehaus.groovy.ast.ClassNode
+import org.codehaus.groovy.ast.expr.ClassExpression
+import org.codehaus.groovy.ast.expr.PropertyExpression
+import org.codehaus.groovy.control.SourceUnit
+import org.codehaus.groovy.transform.AnnotationCollectorTransform
+
 import java.lang.annotation.ElementType
 import java.lang.annotation.Target
 

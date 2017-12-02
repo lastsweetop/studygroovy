@@ -1,3 +1,5 @@
+package traits
+
 import groovy.transform.SelfType
 import groovy.transform.CompileStatic
 
@@ -27,7 +29,7 @@ class Person6 implements Greetable{
 def p=new Person6()
 assert p.greeting()=='hello Bob'
 
-trait Greeter {
+trait Greeter3 {
   private def greetingMessage(){
     'Hello from a private method!'
   }
@@ -38,7 +40,7 @@ trait Greeter {
    }
 }
 
-class GreetingMachine implements Greeter {
+class GreetingMachine implements Greeter3 {
 }
 
 def g=new GreetingMachine()
