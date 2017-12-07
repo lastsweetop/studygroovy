@@ -1,0 +1,4 @@
+moduleName=Test module for specifications
+moduleVersion=1.0-test
+extensionClasses=gettingStarted.runtime.MaxRetriesExtension
+staticExtensionClasses=gettingStarted.runtime.StaticStringExtension

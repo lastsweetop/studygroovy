@@ -1,4 +1,4 @@
-package gettingStarted
+package gettingStarted.io
 
 import groovy.io.FileType
 
