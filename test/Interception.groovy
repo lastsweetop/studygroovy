@@ -14,4 +14,15 @@ class InterceptionTest extends GroovyTestCase {
         assert interception.defineMethod() == 'invokeMethod'
         assert interception.someMethod() == 'invokeMethod'
     }
+
+    void testMyTransformWithBreakpoint() {
+        assertScript '''
+            import gettingStarted.myast.Shout
+            @Shout
+            void greeting() {
+                println "Hello World"
+            }
+            greeting()
+        '''
+    }
 }
