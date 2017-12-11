@@ -1,0 +1,12 @@
+apply plugin: 'groovy'
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.springframework:spring-orm:3.2.5.RELEASE'
+    compile 'org.codehaus.groovy:groovy-all:3.0.0-alpha-1'
+    compile 'junit:junit:4.11'
+}

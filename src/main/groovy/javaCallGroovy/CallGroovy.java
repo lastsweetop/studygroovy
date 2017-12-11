@@ -1,5 +1,4 @@
 package javaCallGroovy;
-import gettingStarted.compileTime.Person6;
 
 public class CallGroovy {
     public static void main(String[] args) {
