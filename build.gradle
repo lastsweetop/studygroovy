@@ -1,12 +1,25 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "net.saliman:gradle-cobertura-plugin:${coberturaVersion}"
+    }
+}
+
+
 apply plugin: 'groovy'
-apply plugin: 'java'
+apply plugin: 'net.saliman.cobertura'
 
 repositories {
     mavenCentral()
+    maven { url 'https://jitpack.io' }
 }
 
 dependencies {
-    compile 'org.springframework:spring-orm:3.2.5.RELEASE'
-    compile 'org.codehaus.groovy:groovy-all:3.0.0-alpha-1'
-    compile 'junit:junit:4.11'
+    compile "org.codehaus.groovy:groovy-all:${groovyVersion}"
+    compile "org.spockframework.spock:spock-core:${spockVersion}"
+    compile "org.spockframework.spock:spock-spring:${spockVersion}"
+    compile "org.springframework:spring-test:${springVersion}"
+    compile "junit:junit:${junitVersion}"
 }
