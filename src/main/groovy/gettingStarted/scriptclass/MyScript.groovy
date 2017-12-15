@@ -1,7 +1,6 @@
 package gettingStarted.scriptclass
-
-import gettingStarted.delegatesTo.EmailSpec
 @BaseScript(MyBaseClass)
+import gettingStarted.delegatesTo.EmailSpec
 import groovy.transform.BaseScript
 import org.codehaus.groovy.control.CompilerConfiguration
 
@@ -21,5 +20,3 @@ assert result == 1
 def script = shell.parse("println 'Ok'")
 assert script.run() == 1
 assert script.run() == 2
-
-
