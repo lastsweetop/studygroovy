@@ -22,17 +22,16 @@ class TimeWindows {
         }
     }
 }
+
+
 def tw=new TimeWindows()
 30.times {
     def i = it
     sleep(100)
-    new Runnable(){
-        @Override
-        void run() {
-            if(tw.request(10,20)){
-                println "hello $i"
-                sleep(150)
-            }
+    Thread.start {
+        if(tw.request(10,20)){
+            println "hello $i"
+            sleep(150)
         }
-    }.run()
+    }
 }
